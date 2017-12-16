@@ -26,11 +26,31 @@ class SimpleForm extends React.Component {
   }
 
   render() {
+    var filter = this.state.selectedFilter;
+
+    
+    const reviews = _.map(this.props.reviews, (review, index) => {
+      return review.map((item) => {
+        if (item.rating > 3 && filter === "positive") {
+            console.log("from render:", item.rating);
+            return item;
+        } else if(item.rating <= 3 && filter === "negative") {
+            console.log("from render:", item.rating);
+            return item;
+        } else {
+            return item;
+        }
+      })
+    })
+
 
     return (
       <div className="container">
           <Summary filterClick={this.handleFilterClick} reviews={this.props.reviews} />
-          <ReviewsComponent reviews={this.props.reviews} filter={this.state.selectedFilter} />
+          <ReviewsComponent
+            reviews={this.props.reviews}
+            filter={this.state.selectedFilter}
+          />
       </div>
     )
   }
