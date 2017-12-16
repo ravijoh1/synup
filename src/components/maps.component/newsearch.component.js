@@ -13,18 +13,24 @@ class SimpleForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleFilterClick = this.handleFilterClick.bind(this);
+    this.state = {selectedFilter: "all"}
+
+    this.handleFilterClick = this.handleFilterClick.bind(this)
   }
 
-  handleFilterClick(content) {
-
+  handleFilterClick(filter) {
+    this.setState({
+      selectedFilter: filter 
+    })
+    // console.log(`Clicked: ${filter} : ${this.state.selectedFilter}`);
   }
 
   render() {
+
     return (
       <div className="container">
-          <Summary filterClick={this.handleFilterClick} />
-          <ReviewsComponent reviews={this.props.reviews} />
+          <Summary filterClick={this.handleFilterClick} reviews={this.props.reviews} />
+          <ReviewsComponent reviews={this.props.reviews} filter={this.state.selectedFilter} />
       </div>
     )
   }

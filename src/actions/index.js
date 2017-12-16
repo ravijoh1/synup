@@ -2,8 +2,12 @@ import axios from 'axios';
 import _ from 'lodash';
 
 export const AUTO_LOCATION = 'AUTO_LOCATION';
-export const NEARBY_SEARCH = 'NEARBY_SEARCH';
 export const FETCH_REVIEWS = 'FETCH_REVIEWS';
+
+export const FILTER_ALL = 'FILTER_ALL';
+export const FILTER_NEW = 'FILTER_NEW';
+export const FILTER_POSITIVE = 'FILTER_POSITIVE';
+export const FILTER_NEGATIVE = 'FILTER_NEGATIVE';
 
 
 const API_KEY = 'e39e867a15e4fc74c5ef95cd114002268403cded';
@@ -29,5 +33,12 @@ export function fetchLocations(input) {
     return {
         type: AUTO_LOCATION,
         payload: request
+    }
+}
+
+export function filterShowAll(filter) {
+    return {
+        type: FILTER_ALL,
+        payload: filter
     }
 }
