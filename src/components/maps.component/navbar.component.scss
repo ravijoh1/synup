@@ -1,0 +1,20 @@
+.navbar {
+    background-color: #084478;
+    height: 71px;
+
+    .navbar-brand {
+        font-size: 22px;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+    }
+
+    .navbar-search {
+        position: relative;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-search {
+        min-width: 560px;
+    }
+}
