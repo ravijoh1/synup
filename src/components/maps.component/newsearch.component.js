@@ -17,6 +17,7 @@ class SimpleForm extends React.Component {
   render() {
     return (
       <div className="container">
+          <Summary />
           <ReviewsComponent reviews={this.props.reviews} />
       </div>
     )

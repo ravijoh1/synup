@@ -1,0 +1,44 @@
+.row.summary{
+    margin: 0;
+    color: #6d6d6d;
+
+    .col-sm {
+        height: 130px;
+        padding: 10px;
+        border-right: 2px solid #d6d6d6;
+        display: flex;
+        align-items: center;
+
+        h5 {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0;
+        }
+        
+
+        img {
+            margin-right: 10px;
+        }
+
+        &:last-child {
+            border-right: 0;
+        }
+
+        
+        &.total img, &.total h5 {
+            color: #084478;
+        }
+
+        &.new img, &.new h5 {
+            color: #f39c12;
+        }
+
+        &.positive img, &.positive h5 {
+            color: #7ccc63;
+        }
+        
+        &.negative img, &.negative h5 {
+            color: #e74c3c;
+        }
+    }
+}

@@ -5,7 +5,7 @@ import './reviews.component.scss';
 
 const ReviewsComponent = (props) => {
     if(!Object.keys(props.reviews).length) {
-        return (<div>Please select the place above to display content</div>)
+        return (<div>Please select the place from above search to display content</div>)
     }
     return (
         <div className="reviews card synup-card">
