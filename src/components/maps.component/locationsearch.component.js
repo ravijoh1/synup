@@ -14,7 +14,6 @@ class LocationSearch extends React.Component {
 
     this.state = { term: '',
                    autocompleteVisible: false,
-                   nearby_places: {},
                    selected: ""
                  }
 

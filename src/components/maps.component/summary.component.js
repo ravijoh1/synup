@@ -6,9 +6,9 @@ import './summary.component.scss';
 
 const Summary = (props) => {
     return (
-        <div className="card synup-card summary-card">
+        <div className="card synup-card">
             <div className="row summary">
-                <div className="col-sm total">
+                <div className="col-sm total selected" onClick={() => props.filterClick("all")}>
                     <img src="./src/images/interactions-all.svg" />
                     <div>
                     <h5>330</h5>

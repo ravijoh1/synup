@@ -12,12 +12,18 @@ import Summary from './summary.component';
 class SimpleForm extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleFilterClick = this.handleFilterClick.bind(this);
+  }
+
+  handleFilterClick(content) {
+
   }
 
   render() {
     return (
       <div className="container">
-          <Summary />
+          <Summary filterClick={this.handleFilterClick} />
           <ReviewsComponent reviews={this.props.reviews} />
       </div>
     )
