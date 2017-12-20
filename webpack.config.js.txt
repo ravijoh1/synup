@@ -1,16 +1,6 @@
-var webpack = require('webpack');
-
 module.exports = {
   entry: [
     './src/index.js'
-  ],
-  plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery',
-      Popper: ['popper.js', 'default']
-    })
   ],
   output: {
     path: __dirname,
@@ -35,5 +25,11 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: './'
-  }
+  },
+  plugins: [
+      new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery"
+    })
+  ]
 };

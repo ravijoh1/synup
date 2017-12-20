@@ -8,6 +8,7 @@
         border-right: 2px solid #d6d6d6;
         display: flex;
         align-items: center;
+        cursor: pointer;
 
         h5 {
             font-size: 28px;
@@ -17,6 +18,10 @@
         
         img {
             margin-right: 10px;
+        }
+
+        &:hover {
+            background-color: #eee;
         }
 
         &:last-child {
@@ -43,5 +48,17 @@
         &.selected {
             border-bottom: 10px solid #084478;
         }
+    }
+}
+
+@media (max-width: 996px) {
+    .col-sm.total {
+        max-width: 25%;
+    }
+}
+
+@media (max-width: 767px) {
+    .col-sm.total {
+        max-width: 50%;
     }
 }

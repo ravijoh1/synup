@@ -6,6 +6,7 @@ export default function(state = {}, action) {
             return {...state, ...action.payload.data.locations}
         case FETCH_REVIEWS:
             return {...state, ...action.payload.data.reviews}
+        default:
+            return state;
     }
-    return state;
 }

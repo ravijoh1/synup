@@ -8,9 +8,14 @@ import ReduxThunk from 'redux-thunk';
 import SimpleForm from './components/maps.component/newsearch.component';
 import Navbar from './components/maps.component/navbar.component';
 
+import $ from 'jquery';
+window.jQuery = $;
+window.$ = $;
 
 import App from './components/app';
 import reducers from './reducers';
+
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 import "bootstrap/scss/bootstrap.scss";
 

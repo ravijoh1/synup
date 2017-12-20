@@ -29,7 +29,7 @@ class LocationSearch extends React.Component {
   onInputChange(value) {
     event.preventDefault();
     this.setState({ term: value });
-    this.props.fetchLocations(this.state.term);
+    // this.props.fetchLocations(this.state.term);
 
     if(this.props.locations[0]){
       this.setState({autocompleteVisible: true})
@@ -37,7 +37,9 @@ class LocationSearch extends React.Component {
   }
 
   onInputFocusOut(e){
-    this.setState({ autocompleteVisible: false })
+    setTimeout(()=>{
+      this.setState({ autocompleteVisible: false });
+    }, 1000)
   }
 
   handleSelectSearch(input) {
@@ -46,7 +48,8 @@ class LocationSearch extends React.Component {
     this.setState({ autocompleteVisible: false,  term: `${input.name} - ${input.city}, ${input.state}`  });
   }
 
-  componentDidMount() {
+  componentWillMount() {
+    this.props.fetchLocations(this.state.term);
   }
 
   render() {
@@ -56,7 +59,7 @@ class LocationSearch extends React.Component {
     }
     
     const autoCompleteClass = this.state.autocompleteVisible ?
-    "bs-autocomplete-menu visible": "list-group bs-autocomplete-menu";
+    "bs-autocomplete-menu dropdown visible": "list-group dropdown bs-autocomplete-menu";
 
     return (
       <div>
